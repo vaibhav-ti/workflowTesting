@@ -9,9 +9,8 @@ jobs:
   post-request:
     runs-on: ubuntu-latest
     steps:
-      - name: Send repo info to platform
-        uses: fjogeleit/http-request-action@v1.12.0
+      - name: Github Repository Metadata
+        uses: varunsridharan/action-repository-meta@2.2
         with:
           url: "https://8000-trilogygrou-processbppl-csl0gsl8fqk.ws.trilogy.devspaces.com/analytics/dummy/"
           method: "POST"
-          data: '{ "ref_name": "${{ github.ref_name }}", "repository": "${{ github.repository }}" }'
